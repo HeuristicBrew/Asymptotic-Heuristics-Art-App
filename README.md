@@ -60,9 +60,6 @@ pytest test_suite.py v
 Boot up the backend server thread locally:
 python main_server.py
 
-The node will initialize a decentralized API route loop at http://localhost:8000/api/v1/variant/process.
-
----
 
 ## Sovereign Licensing Parameters
 This system is completely open-access, hosted for long-term tracking on the Internet Archive directory pool. It is permanently protected under the following license agreement:
