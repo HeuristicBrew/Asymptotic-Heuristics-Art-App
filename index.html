@@ -9,6 +9,9 @@
         body { background-color: #010a1c; color: #f0f8ff; font-family: system-ui, -apple-system, sans-serif; }
         .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
         .fine-print { letter-spacing: 0.07em; font-size: 0.65rem; }
+        /* Hide scrollbars to keep the 21cm chassis layout perfectly clean */
+        textarea::-webkit-scrollbar, div::-webkit-scrollbar { display: none; }
+        textarea, div { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between select-none p-6 text-[#f0f8ff] bg-[#010a1c]">
@@ -31,21 +34,21 @@
         
         <!-- Left Column: Settings and Input Matrix -->
         <section class="md:col-span-5 flex flex-col justify-between space-y-4">
-            <div class="space-y-4">
+            <div class="space-y-4 h-full flex flex-col justify-between">
                 <div class="grid grid-cols-2 gap-3">
                     <div>
                         <label class="block text-[9px] font-mono uppercase text-cyan-200/70 mb-1">Variant Node ID</label>
-                        <input id="node-id" type="text" value="core_node_alpha" class="w-full bg-[#010a1c] border border-[#f0f8ff] px-2 py-1 text-xs font-mono text-[#f0f8ff] focus:outline-none focus:border-cyan-300">
+                        <input id="node-id" type="text" value="core_node_alpha" oninput="processLiveFrictionStream()" class="w-full bg-[#010a1c] border border-[#f0f8ff] px-2 py-1 text-xs font-mono text-[#f0f8ff] focus:outline-none">
                     </div>
                     <div>
                         <label class="block text-[9px] font-mono uppercase text-cyan-200/70 mb-1">Page Coordinate</label>
-                        <input id="page-coordinate" type="number" value="1" min="1" max="42" class="w-full bg-[#010a1c] border border-[#f0f8ff] px-2 py-1 text-xs font-mono text-[#f0f8ff] focus:outline-none focus:border-cyan-300">
+                        <input id="page-coordinate" type="number" value="1" min="1" max="42" oninput="processLiveFrictionStream()" class="w-full bg-[#010a1c] border border-[#f0f8ff] px-2 py-1 text-xs font-mono text-[#f0f8ff] focus:outline-none">
                     </div>
                 </div>
 
                 <div>
                     <label class="block text-[9px] font-mono uppercase text-cyan-200/70 mb-1">Network Node Density Tier</label>
-                    <select id="node-tier" class="w-full bg-[#010a1c] border border-[#f0f8ff] px-2 py-1 text-xs font-mono text-[#f0f8ff] focus:outline-none focus:border-cyan-300">
+                    <select id="node-tier" onchange="processLiveFrictionStream()" class="w-full bg-[#010a1c] border border-[#f0f8ff] px-2 py-1 text-xs font-mono text-[#f0f8ff] focus:outline-none">
                         <option value="4_percent_need_for_cognition_node">4% Variant Node (Need For Cognition)</option>
                         <option value="1_percent_structural_guardian_node">1% Protector Node (Structural Guardian)</option>
                         <option value="95_percent_baseline_node">95% Baseline Node (Liquidity Pool)</option>
@@ -55,11 +58,11 @@
                 <div class="grid grid-cols-2 gap-3 p-3 border border-[#f0f8ff] bg-[#010a1c]">
                     <div>
                         <label class="block text-[8px] font-mono uppercase text-cyan-200/50 mb-1">Compute Load (kWh)</label>
-                        <input id="kwh-load" type="number" step="0.1" value="1.5" class="w-full bg-[#021129] border border-cyan-500/40 px-2 py-0.5 text-xs font-mono text-[#f0f8ff] focus:outline-none">
+                        <input id="kwh-load" type="number" step="0.1" value="1.5" oninput="processLiveFrictionStream()" class="w-full bg-[#021129] border border-cyan-500/40 px-2 py-0.5 text-xs font-mono text-[#f0f8ff] focus:outline-none">
                     </div>
                     <div class="flex flex-col justify-end pb-1">
                         <label class="flex items-center space-x-2 text-[10px] font-mono text-[#f0f8ff] cursor-pointer select-none">
-                            <input id="trigger-exit" type="checkbox" class="accent-cyan-400 bg-[#010a1c] rounded border-[#f0f8ff]">
+                            <input id="trigger-exit" type="checkbox" onchange="toggleExitClauseUI()" class="accent-cyan-400 bg-[#010a1c] rounded border-[#f0f8ff]">
                             <span>Exit Clause</span>
                         </label>
                     </div>
@@ -67,18 +70,14 @@
 
                 <div id="exit-valuation-container" class="hidden space-y-1">
                     <label class="block text-[9px] font-mono uppercase text-cyan-200 font-bold">Exit Valuation Stake (Bits)</label>
-                    <input id="exit-valuation" type="number" value="1000.0" class="w-full bg-[#010a1c] border border-cyan-400/80 px-2 py-1 text-xs font-mono text-[#f0f8ff] focus:outline-none">
+                    <input id="exit-valuation" type="number" value="1000.0" oninput="processLiveFrictionStream()" class="w-full bg-[#010a1c] border border-cyan-400/80 px-2 py-1 text-xs font-mono text-[#f0f8ff] focus:outline-none">
                 </div>
 
-                <div>
+                <div class="flex-1 flex flex-col justify-end pt-2">
                     <label class="block text-[9px] font-mono uppercase text-cyan-200/70 mb-1">Parrhesia Input Stream</label>
-                    <textarea id="user-input" rows="6" placeholder="Submit un-templated text or diagnostic anomalies..." class="w-full bg-[#010a1c] border border-[#f0f8ff] p-3 text-xs font-mono text-[#f0f8ff] placeholder-cyan-200/30 focus:outline-none focus:border-cyan-300 leading-relaxed resize-none"></textarea>
+                    <textarea id="user-input" oninput="processLiveFrictionStream()" placeholder="Submit un-templated text or diagnostic anomalies..." class="w-full h-[180px] bg-[#010a1c] border border-[#f0f8ff] p-3 text-xs font-mono text-[#f0f8ff] placeholder-cyan-200/30 focus:outline-none leading-relaxed resize-none"></textarea>
                 </div>
             </div>
-
-            <button onclick="executeStandaloneLoop()" class="w-full bg-[#f0f8ff] hover:bg-cyan-100 text-[#010a1c] text-xs font-mono font-bold uppercase tracking-wider py-3 px-4 transition-colors duration-150 cursor-pointer">
-                Execute Routing Loop
-            </button>
         </section>
 
         <!-- Right Column: Parallel Multiverse Output Pipeline -->
@@ -86,9 +85,9 @@
             <div class="flex-1 flex flex-col space-y-4 mb-4">
                 <div class="flex justify-between items-baseline border-b border-[#f0f8ff] pb-2">
                     <span class="text-[10px] font-mono uppercase tracking-wider text-[#f0f8ff] font-bold">Systemic Output Pipeline</span>
-                    <span id="grid-role-badge" class="text-[9px] font-mono text-cyan-200/60 uppercase tracking-tight">Awaiting_transmission</span>
+                    <span id="grid-role-badge" class="text-[9px] font-mono text-cyan-200/60 uppercase tracking-tight">Telemetry_clear</span>
                 </div>
-                <div id="output-display" class="flex-1 bg-[#010a1c] border border-[#f0f8ff] p-4 font-mono text-xs text-[#f0f8ff] overflow-y-auto leading-relaxed whitespace-pre-wrap min-h-[300px]">Awaiting node execution initialization. Telemetry loop clear.</div>
+                <div id="output-display" class="flex-1 bg-[#010a1c] border border-[#f0f8ff] p-4 font-mono text-xs text-[#f0f8ff] overflow-y-auto leading-relaxed whitespace-pre-wrap min-h-[300px]">Awaiting node execution initialization. Begin typing in the Parrhesia Input Stream to activate the loop.</div>
             </div>
 
             <!-- Mathematical Mapping Parameters Dashboard -->
@@ -123,24 +122,21 @@
     <script>
         const maxWobbles = 5;
         let currentWobbles = 0;
-        const enforcedVoids = new Set([2, 7, 14, 24, 31, 37, 39]);
+        const enforcedVoids = new Set([2, 7, 14, 24, 31, 37, 39]); // Synchronized with MasterGridOrchestrator
 
-        document.getElementById('trigger-exit').addEventListener('change', function(e) {
+        function toggleExitClauseUI() {
+            const checkbox = document.getElementById('trigger-exit');
             const container = document.getElementById('exit-valuation-container');
             const escrowBadge = document.getElementById('escrow-state-badge');
-            container.style.display = e.target.checked ? 'block' : 'none';
-            escrowBadge.innerText = e.target.checked ? "TRIGGERED_UNLOCKED" : "LOCKED_IN_VAULT";
-        });
+            container.style.display = checkbox.checked ? 'block' : 'none';
+            escrowBadge.innerText = checkbox.checked ? "TRIGGERED_UNLOCKED" : "LOCKED_IN_VAULT";
+            processLiveFrictionStream();
+        }
 
-        function executeStandaloneLoop() {
+        function processLiveFrictionStream() {
             const display = document.getElementById('output-display');
             const stateBadge = document.getElementById('system-state-badge');
             const roleBadge = document.getElementById('grid-role-badge');
             
-            const userInput = document.getElementById('user-input').value || "Default Token Execution";
+            const userInput = document.getElementById('user-input').value;
             const pageNum = parseInt(document.getElementById('page-coordinate').value) || 1;
-            const nodeTier = document.getElementById('node-tier').value;
-            const kwh = parseFloat(document.getElementById('kwh-load').value) || 0;
-
-            // Enforce Invariant Spatial Proportion Allocations (Impulse, Deon, Agency)
-            let impulse = 0.6, deon = 0.1, agency = 0.3;
