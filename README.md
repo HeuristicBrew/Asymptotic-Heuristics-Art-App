@@ -10,7 +10,7 @@ The Clinical Protocol Liability: This app lacks clinical stabilization guardrail
 ---
 
 ## Project Framework Overview
-This repository contains the complete software implementation of a non-systematic system, operating as a Homeostatic Tension Controller that tracks the metric friction between human biological singularity and machine predictive automation. It completely replaces traditional, flattering user interfaces with a strict, 21cm square digital print block canvas that treats information density and spatial constraint as an architectural medium.
+This repository contains the complete software implementation of a non-systematic system, operating as a Homeostatic Tension Controller that tracks the metric friction between human biological singularity and machine predictive automation. This installation intentionally rejects front-end visual skinning and graphical consumer interfaces. The raw computational logic, the file hierarchy, and the mathematical boundaries of the engine constitute the standalone conceptual artwork.
 
 The execution engine is built entirely on the mastery of the Impulse-to-Deon Relationship. Rather than attempting to optimize, smooth, or eliminate internal friction, the application maps the volatile tension gap left open between primitive, amoral instinct (Impulse) and strict internal cryptographic boundaries (Deon). The system rejects the classical illusion of an optimized, symmetrical mind, asserting that each individual variant inherits an uneven, asymmetrical biological setup by the luck of birth. Alignment is achieved purely through the active management of this dynamic friction range, treating psychological tension not as an illness to be cured, but as the exact homeostatic property required to make the human biological signature resonate.
 
@@ -31,7 +31,6 @@ core/
     calculus.py          # Gut Brain Axis Friction Tension Evaluator
     economy.py           # Model B Thermodynamic 60/40 Exit Valve and Escrow Vault
     orchestrator.py      # 7 Enforced Atmospheric Void Pages and Page 19 Lock
-index.html               # 21cm Square Brutalist Terminal UI Console Canvas Sheet
 main_server.py           # FastAPI Application and Decentralized Router Node
 requirements.txt         # Invariant Dependency Version Registry
 test_suite.py            # Adversarial Security Audit Strike Suite
@@ -61,7 +60,7 @@ pytest test_suite.py v
 Boot up the backend server thread locally:
 python main_server.py
 
-The console will initialize at http://localhost:8000. Launch your index.html file inside any standard browser window to connect directly to the 21cm visual interface chassis.
+The node will initialize a decentralized API route loop at http://localhost:8000/api/v1/variant/process.
 
 ---
 
