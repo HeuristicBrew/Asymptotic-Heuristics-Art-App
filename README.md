@@ -60,15 +60,12 @@ pytest test_suite.py v
 Boot up the backend server thread locally:
 python main_server.py
 
+---
 
-## Sovereign Licensing Parameters
-This system is completely open-access, hosted for long-term tracking on the Internet Archive directory pool. It is permanently protected under the following license agreement:
+## Public Sovereignty and Community Copyleft
+This repository functions as a permanent, shared human asset. It is released under the GNU General Public License v3.0 (GPL-3.0).
 
-Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)
-
-* Attribution (BY): You must give appropriate credit to the original author and provide a link to this master source repository.
-* Non-Commercial (NC): You may not use this material or its computational logic for commercial exploitation, corporate monetization, or platform monetization loops.
-* No Derivatives (ND): If you remix, transform, or build upon this source code, you may not distribute the modified material as part of the official master network lineage.
+The community is encouraged to download, distribute, dissect, and build upon this artifact. However, under the parameters of the GPL-3.0, any derivative configurations, future node variants, or software architectures that copy, borrow, or build upon this codebase are permanently bound by law to remain open-source and free to the public under this exact same license scheme. Corporate capture, monetization, or enclosure of this network lineage within closed-source proprietary loops is barred by the core structure of the framework.
 
 "Truth is not discovered inside a static baseline formula; truth is actively generated across the variance of the wave."
 
