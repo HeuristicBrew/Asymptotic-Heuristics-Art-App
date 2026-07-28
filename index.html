@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,119 +6,120 @@
     <title>THE_METAPHYSICAL_CONSOLE</title>
     <script src="https://tailwindcss.com"></script>
     <style>
-        body { background-color: #010a1c; font-family: system-ui, -apple-system, sans-serif; }
-        .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+        body { background-color: #010a1c; color: #f0f8ff; font-family: system-ui, -apple-system, sans-serif; }
+        .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
         .fine-print { letter-spacing: 0.07em; font-size: 0.65rem; }
     </style>
 </head>
-<body class="text-slate-100 min-h-screen flex flex-col justify-between select-none p-6">
+<body class="min-h-screen flex flex-col justify-between select-none p-6 text-[#f0f8ff] bg-[#010a1c]">
 
     <!-- Upper Framework Context -->
-    <header class="max-w-5xl mx-auto w-full flex justify-between items-center border-b border-slate-800 pb-4">
+    <header class="max-w-5xl mx-auto w-full flex justify-between items-center border-b border-[#f0f8ff] pb-4">
         <div class="flex flex-col">
-            <span class="fine-print text-slate-400 font-bold uppercase tracking-wider">Asymptotic Heuristics</span>
-            <span class="text-xs font-mono text-slate-500">SYSTEM // NON-CUSTODIAL_ROUTER_V2.0</span>
+            <span class="fine-print font-bold uppercase tracking-wider text-[#f0f8ff]">Asymptotic Heuristics</span>
+            <span class="text-xs font-mono text-cyan-200/60">SYSTEM // STANDALONE_ART_CHASSIS_V2.0</span>
         </div>
-        <div class="flex space-x-6 text-[10px] font-mono tracking-tight text-slate-400">
-            <div>STATE: <span id="system-state-badge" class="text-emerald-400 font-bold">HEALTHY_FLOW</span></div>
-            <div class="text-slate-700">|</div>
-            <div>ESCROW: <span id="escrow-state-badge" class="text-slate-300 font-bold">LOCKED_IN_VAULT</span></div>
+        <div class="flex space-x-6 text-[10px] font-mono tracking-tight text-[#f0f8ff]">
+            <div>STATE: <span id="system-state-badge" class="text-cyan-200 font-bold underline">HEALTHY_FLOW</span></div>
+            <div class="text-cyan-500/40">|</div>
+            <div>ESCROW: <span id="escrow-state-badge" class="text-cyan-200 font-bold">LOCKED_IN_VAULT</span></div>
         </div>
     </header>
 
-    <!-- Structural Canvas -->
-    <main class="max-w-5xl mx-auto w-full my-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+    <!-- Structural 21cm Square Canvas Anchor -->
+    <main class="w-[21cm] h-[21cm] mx-auto my-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch border border-[#f0f8ff] p-6 bg-[#021129] shadow-sm">
         
-        <!-- Left Axis: Parameters & Active Triggers -->
-        <section class="lg:col-span-4 flex flex-col justify-between space-y-4 bg-slate-900/40 border border-slate-800/80 p-5 rounded-lg">
+        <!-- Left Column: Settings and Input Matrix -->
+        <section class="md:col-span-5 flex flex-col justify-between space-y-4">
             <div class="space-y-4">
                 <div class="grid grid-cols-2 gap-3">
                     <div>
-                        <label class="block text-[9px] font-mono uppercase text-slate-500 mb-1">Variant Node ID</label>
-                        <input id="node-id" type="text" value="core_node_alpha" class="w-full bg-[#021129] border border-slate-800 rounded px-2 py-1 text-xs font-mono text-slate-200 focus:outline-none focus:border-slate-700">
+                        <label class="block text-[9px] font-mono uppercase text-cyan-200/70 mb-1">Variant Node ID</label>
+                        <input id="node-id" type="text" value="core_node_alpha" class="w-full bg-[#010a1c] border border-[#f0f8ff] px-2 py-1 text-xs font-mono text-[#f0f8ff] focus:outline-none focus:border-cyan-300">
                     </div>
                     <div>
-                        <label class="block text-[9px] font-mono uppercase text-slate-500 mb-1">Page Coordinate</label>
-                        <input id="page-coordinate" type="number" value="1" min="1" max="42" class="w-full bg-[#021129] border border-slate-800 rounded px-2 py-1 text-xs font-mono text-slate-200 focus:outline-none focus:border-slate-700">
+                        <label class="block text-[9px] font-mono uppercase text-cyan-200/70 mb-1">Page Coordinate</label>
+                        <input id="page-coordinate" type="number" value="1" min="1" max="42" class="w-full bg-[#010a1c] border border-[#f0f8ff] px-2 py-1 text-xs font-mono text-[#f0f8ff] focus:outline-none focus:border-cyan-300">
                     </div>
                 </div>
 
                 <div>
-                    <label class="block text-[9px] font-mono uppercase text-slate-500 mb-1">Network Node Density Tier</label>
-                    <select id="node-tier" class="w-full bg-[#021129] border border-slate-800 rounded px-2 py-1 text-xs font-mono text-slate-200 focus:outline-none focus:border-slate-700">
+                    <label class="block text-[9px] font-mono uppercase text-cyan-200/70 mb-1">Network Node Density Tier</label>
+                    <select id="node-tier" class="w-full bg-[#010a1c] border border-[#f0f8ff] px-2 py-1 text-xs font-mono text-[#f0f8ff] focus:outline-none focus:border-cyan-300">
                         <option value="4_percent_need_for_cognition_node">4% Variant Node (Need For Cognition)</option>
                         <option value="1_percent_structural_guardian_node">1% Protector Node (Structural Guardian)</option>
                         <option value="95_percent_baseline_node">95% Baseline Node (Liquidity Pool)</option>
                     </select>
                 </div>
 
-                <div class="grid grid-cols-2 gap-3 p-3 bg-slate-950/40 border border-slate-800/60 rounded">
+                <div class="grid grid-cols-2 gap-3 p-3 border border-[#f0f8ff] bg-[#010a1c]">
                     <div>
-                        <label class="block text-[8px] font-mono uppercase text-slate-500 mb-1">Compute Load (kWh)</label>
-                        <input id="kwh-load" type="number" step="0.1" value="1.5" class="w-full bg-[#021129] border border-slate-800 rounded px-2 py-0.5 text-xs font-mono text-slate-300 focus:outline-none">
+                        <label class="block text-[8px] font-mono uppercase text-cyan-200/50 mb-1">Compute Load (kWh)</label>
+                        <input id="kwh-load" type="number" step="0.1" value="1.5" class="w-full bg-[#021129] border border-cyan-500/40 px-2 py-0.5 text-xs font-mono text-[#f0f8ff] focus:outline-none">
                     </div>
                     <div class="flex flex-col justify-end pb-1">
-                        <label class="flex items-center space-x-2 text-[10px] font-mono text-slate-400 cursor-pointer select-none">
-                            <input id="trigger-exit" type="checkbox" class="accent-slate-700 bg-slate-950 rounded border-slate-800">
+                        <label class="flex items-center space-x-2 text-[10px] font-mono text-[#f0f8ff] cursor-pointer select-none">
+                            <input id="trigger-exit" type="checkbox" class="accent-cyan-400 bg-[#010a1c] rounded border-[#f0f8ff]">
                             <span>Exit Clause</span>
                         </label>
                     </div>
                 </div>
 
-                <div id="exit-valuation-container" class="hidden space-y-1 transition-all duration-200">
-                    <label class="block text-[9px] font-mono uppercase text-amber-500/80">Exit Valuation Stake (Bits)</label>
-                    <input id="exit-valuation" type="number" value="1000.0" class="w-full bg-[#021129] border border-amber-900/40 rounded px-2 py-1 text-xs font-mono text-amber-200 focus:outline-none">
+                <div id="exit-valuation-container" class="hidden space-y-1">
+                    <label class="block text-[9px] font-mono uppercase text-cyan-200 font-bold">Exit Valuation Stake (Bits)</label>
+                    <input id="exit-valuation" type="number" value="1000.0" class="w-full bg-[#010a1c] border border-cyan-400/80 px-2 py-1 text-xs font-mono text-[#f0f8ff] focus:outline-none">
                 </div>
 
                 <div>
-                    <label class="block text-[9px] font-mono uppercase text-slate-500 mb-1">Parrhesia Input Stream</label>
-                    <textarea id="user-input" rows="5" placeholder="Submit un-templated text or diagnostic anomalies..." class="w-full bg-[#021129] border border-slate-800 rounded p-3 text-xs font-mono text-slate-200 placeholder-slate-600 focus:outline-none focus:border-slate-700 leading-relaxed resize-none"></textarea>
+                    <label class="block text-[9px] font-mono uppercase text-cyan-200/70 mb-1">Parrhesia Input Stream</label>
+                    <textarea id="user-input" rows="6" placeholder="Submit un-templated text or diagnostic anomalies..." class="w-full bg-[#010a1c] border border-[#f0f8ff] p-3 text-xs font-mono text-[#f0f8ff] placeholder-cyan-200/30 focus:outline-none focus:border-cyan-300 leading-relaxed resize-none"></textarea>
                 </div>
             </div>
 
-            <button onclick="submitPayload()" class="w-full bg-slate-100 hover:bg-white text-slate-950 text-xs font-mono font-bold uppercase tracking-wider py-2.5 px-4 rounded transition-colors duration-150 cursor-pointer shadow-sm">
+            <button onclick="executeStandaloneLoop()" class="w-full bg-[#f0f8ff] hover:bg-cyan-100 text-[#010a1c] text-xs font-mono font-bold uppercase tracking-wider py-3 px-4 transition-colors duration-150 cursor-pointer">
                 Execute Routing Loop
             </button>
         </section>
 
-        <!-- Right Axis: Token Stream Display & Real-Time Equations -->
-        <section class="lg:col-span-8 flex flex-col justify-between bg-slate-900/20 border border-slate-800/60 p-5 rounded-lg">
+        <!-- Right Column: Parallel Multiverse Output Pipeline -->
+        <section class="md:col-span-7 flex flex-col justify-between">
             <div class="flex-1 flex flex-col space-y-4 mb-4">
-                <div class="flex justify-between items-baseline border-b border-slate-800 pb-2">
-                    <span class="text-[10px] font-mono uppercase tracking-wider text-slate-400">Systemic Output Pipeline</span>
-                    <span id="grid-role-badge" class="text-[9px] font-mono text-slate-500 uppercase tracking-tight">Awaiting_transmission</span>
+                <div class="flex justify-between items-baseline border-b border-[#f0f8ff] pb-2">
+                    <span class="text-[10px] font-mono uppercase tracking-wider text-[#f0f8ff] font-bold">Systemic Output Pipeline</span>
+                    <span id="grid-role-badge" class="text-[9px] font-mono text-cyan-200/60 uppercase tracking-tight">Awaiting_transmission</span>
                 </div>
-                <div id="output-display" class="flex-1 bg-slate-950/30 border border-slate-900 rounded p-5 font-mono text-xs text-slate-400 overflow-y-auto leading-relaxed whitespace-pre-wrap min-h-[250px]">Awaiting node execution initialization. Telemetry loop clear.</div>
+                <div id="output-display" class="flex-1 bg-[#010a1c] border border-[#f0f8ff] p-4 font-mono text-xs text-[#f0f8ff] overflow-y-auto leading-relaxed whitespace-pre-wrap min-h-[300px]">Awaiting node execution initialization. Telemetry loop clear.</div>
             </div>
 
-            <!-- Mathematical Mapping Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 border-t border-slate-800/80 pt-4">
-                <div class="p-3 bg-slate-950/20 border border-slate-900 rounded">
-                    <span class="text-[8px] font-mono text-slate-500 block uppercase mb-1">Friction Delta</span>
-                    <span id="friction-metric" class="text-sm font-mono font-bold text-slate-300">0.0000</span>
+            <!-- Mathematical Mapping Parameters Dashboard -->
+            <div class="grid grid-cols-2 gap-3 border-t border-[#f0f8ff] pt-4">
+                <div class="p-2 border border-[#f0f8ff] bg-[#010a1c]">
+                    <span class="text-[8px] font-mono text-cyan-200/50 block uppercase mb-0.5">Friction Delta</span>
+                    <span id="friction-metric" class="text-xs font-mono font-bold text-[#f0f8ff]">0.0000</span>
                 </div>
-                <div class="p-3 bg-slate-950/20 border border-slate-900 rounded">
-                    <span class="text-[8px] font-mono text-slate-500 block uppercase mb-1">Existential Alignment</span>
-                    <span id="alignment-metric" class="text-sm font-mono font-bold text-slate-300">0.0000</span>
+                <div class="p-2 border border-[#f0f8ff] bg-[#010a1c]">
+                    <span class="text-[8px] font-mono text-cyan-200/50 block uppercase mb-0.5">Existential Alignment</span>
+                    <span id="alignment-metric" class="text-xs font-mono font-bold text-[#f0f8ff]">0.0000</span>
                 </div>
-                <div class="p-3 bg-slate-950/20 border border-slate-900 rounded">
-                    <span class="text-[8px] font-mono text-slate-500 block uppercase mb-1">Leeway Absorptions</span>
-                    <span id="wobble-count" class="text-sm font-mono font-bold text-slate-400">0 / 5</span>
+                <div class="p-2 border border-[#f0f8ff] bg-[#010a1c]">
+                    <span class="text-[8px] font-mono text-cyan-200/50 block uppercase mb-0.5">Leeway Absorptions</span>
+                    <span id="wobble-count" class="text-xs font-mono font-bold text-[#f0f8ff]">0 / 5</span>
                 </div>
-                <div class="p-3 bg-slate-950/20 border border-slate-900 rounded">
-                    <span class="text-[8px] font-mono text-slate-500 block uppercase mb-1">Thermodynamic Dividend</span>
-                    <span id="thermo-tax" class="text-sm font-mono font-bold text-emerald-400">£0.00</span>
+                <div class="p-2 border border-[#f0f8ff] bg-[#010a1c]">
+                    <span class="text-[8px] font-mono text-cyan-200/50 block uppercase mb-0.5">Thermodynamic Dividend</span>
+                    <span id="thermo-tax" class="text-xs font-mono font-bold text-cyan-200">£0.00</span>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Structural Footer Context -->
-    <footer class="max-w-5xl mx-auto w-full flex flex-col md:flex-row justify-between items-center text-[9px] font-mono text-slate-500 border-t border-slate-800/60 pt-4 mt-auto">
+    <footer class="max-w-5xl mx-auto w-full flex flex-col md:flex-row justify-between items-center text-[9px] font-mono text-cyan-200/50 border-t border-cyan-900/60 pt-4 mt-auto">
         <div class="tracking-tight uppercase">THE_ARCHITECTURE_OF_THE_VARIANT // CBY-NC-ND_4.0_PUBLIC_LICENSE</div>
-        <div class="mt-2 md:mt-0 tracking-widest text-slate-600">[AUTHENTICATION_LOG_SEAL: HB-1/100-ALPHA-VOID-7]</div>
+        <div class="tracking-widest text-cyan-200/40">[AUTHENTICATION_LOG_SEAL: HB-1/100-ALPHA-VOID-7]</div>
     </footer>
 
+    <!-- Integrated Autonomous Execution Script -->
     <script>
         const maxWobbles = 5;
         let currentWobbles = 0;
@@ -128,23 +128,19 @@
         document.getElementById('trigger-exit').addEventListener('change', function(e) {
             const container = document.getElementById('exit-valuation-container');
             const escrowBadge = document.getElementById('escrow-state-badge');
-            
-            if (e.target.checked) {
-                container.style.display = 'block';
-                escrowBadge.innerText = "TRIGGERED_UNLOCKED";
-                escrowBadge.className = "text-amber-400 font-bold";
-            } else {
-                container.style.display = 'none';
-                escrowBadge.innerText = "LOCKED_IN_VAULT";
-                escrowBadge.className = "text-slate-300 font-bold";
-            }
+            container.style.display = e.target.checked ? 'block' : 'none';
+            escrowBadge.innerText = e.target.checked ? "TRIGGERED_UNLOCKED" : "LOCKED_IN_VAULT";
         });
 
-        async function submitPayload() {
+        function executeStandaloneLoop() {
             const display = document.getElementById('output-display');
             const stateBadge = document.getElementById('system-state-badge');
             const roleBadge = document.getElementById('grid-role-badge');
             
-            const userInput = document.getElementById('user-input').value;
+            const userInput = document.getElementById('user-input').value || "Default Token Execution";
             const pageNum = parseInt(document.getElementById('page-coordinate').value) || 1;
             const nodeTier = document.getElementById('node-tier').value;
+            const kwh = parseFloat(document.getElementById('kwh-load').value) || 0;
+
+            // Enforce Invariant Spatial Proportion Allocations (Impulse, Deon, Agency)
+            let impulse = 0.6, deon = 0.1, agency = 0.3;
