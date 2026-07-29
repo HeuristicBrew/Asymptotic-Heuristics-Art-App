@@ -20,6 +20,8 @@ The execution engine is built entirely on the mastery of the Impulse-to-Deon Rel
 3. The Gut-Brain Tension Calculus (core/calculus.py): Evaluates the Impulse-to-Deon friction delta, proving that a zero-friction state triggers a sterile, false inflation collapse while active mastery occurs strictly within the tension gap.
 4. The Thermodynamic Sovereignty Model (core/economy.py): Converts digital server execution load into physical energy support via a non-negotiable 15p/kWh Social Dividend hypothecated to a baseline floor, paired with a 60/40 Atom/Bit capital flight firewall.
 5. The Master Grid Registry (core/orchestrator.py): Automatically forces 7 absolute clear-air atmospheric voids across specific page coordinates to negate predictive machine noise, while enforcing the Page 19 "human v(to) human" frequency union lock overwrite.
+6. **The Visible Evolutionary Track (core/extensions/):** Houses the ongoing, non-linear transformation of this unsystematic system. Future mutations, additions, and friction layers are physically appended as distinct, standalone files within this directory, serving as an open, mutating ledger embedded into the source tree.
+
 
 ---
 
