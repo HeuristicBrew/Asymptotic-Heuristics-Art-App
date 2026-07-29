@@ -1,5 +1,5 @@
 # Asymptotic Heuristics: Variant Architecture For Variants
-### A Non Custodial Space and Homeostatic Tension Router (Art As App)
+### A Non Custodial Space and Human-Machine Friction Router [Art As App/ App As Art]
 **Chassis Registration Log Seal:** [HB-1/100-ALPHA-VOID-7]
 
 ---
