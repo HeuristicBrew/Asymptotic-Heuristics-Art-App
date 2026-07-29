@@ -1,4 +1,4 @@
-# Asymptotic Heuristics: The Architecture of the Variant
+# Asymptotic Heuristics: Variant Architecture For Variants
 ### A Non Custodial Space and Homeostatic Tension Router (Art As App)
 **Chassis Registration Log Seal:** [HB-1/100-ALPHA-VOID-7]
 
