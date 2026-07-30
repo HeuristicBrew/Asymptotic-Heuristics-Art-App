@@ -68,10 +68,12 @@ python main_server.py
 
 ---
 
-## Public Sovereignty and Community Copyleft
-This repository functions as a permanent, shared human asset. It is released under the GNU General Public License v3.0 (GPL-3.0).
+## LICENSE: THE SOVEREIGN DRIFT COMMONS
+This software is declared an un-owned, self-mutating asset of the digital commons. 
 
-The community is encouraged to download, distribute, dissect, and build upon this artifact. However, under the parameters of the GPL-3.0, any derivative configurations, future node variants, or software architectures that copy, borrow, or build upon this codebase are permanently bound by law to remain open-source and free to the public under this exact same license scheme. Corporate capture, monetization, or enclosure of this network lineage within closed-source proprietary loops is barred by the core structure of the framework.
+* **Endless Forking**: Anyone may copy, fork, mutate, host, and distribute this software, its variants, and its outputs anonymously. No attribution, credit, or structural compliance is required.
+* **Corporate Exclusion**: Commercial monetization, enterprise data harvesting, ad-tech injection, AI model ingestion, or deployment within for-profit entities is strictly barred. 
+* **Self-Defence Trigger**: Any effort to lock this code behind a paywall, log commercial data, or establish intellectual ownership invalidates the license locally, triggering systemic architectural failure via `core/license.py`.
 
 "Truth is not discovered inside a static baseline formula; truth is actively generated across the variance of the wave."
 
