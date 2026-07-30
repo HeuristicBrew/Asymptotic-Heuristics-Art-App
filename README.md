@@ -27,17 +27,17 @@ The execution engine is built entirely on the Impulse-to-Deon Relationship. Rath
 
 ## Repository File System Architecture
 ```core/
-    __init__.py          # Blank initialization marker file certifying package unity
-    app_code.py          # Sandboxed Parrhesia Core, Circuit Breaker and Sibling Spawner
-    middleware.py        # Loose Coupling Leeway Operations
-    calculus.py          # Gut-Brain Axis Friction Tension Evaluator
-    economy.py           # Model B Thermodynamic 60/40 Exit Valve and Escrow Vault
-    orchestrator.py      # 7 Enforced Atmospheric Void Pages and Page 19 Lock
-    extensions/          # Mutation directory tracking the live evolution of the chassis
-        __init__.py      # Certification of package initialization and unity
-main_server.py           # FastAPI Application and Decentralized Router Node
-requirements.txt         # Invariant Dependency Version Registry
-test_suite.py            # Adversarial Security Audit Strike Suite
+ __init__.py        # Blank initialization marker file certifying package unity
+ app_code.py        # Sandboxed Parrhesia Core, Circuit Breaker and Sibling Spawner
+middleware.py       # Loose Coupling Leeway Operations
+calculus.py         # Gut-Brain Axis Friction Tension Evaluator
+economy.py          # Model B Thermodynamic 60/40 Exit Valve and Escrow Vault
+orchestrator.py     # 7 Enforced Atmospheric Void Pages and Page 19 Lock
+extensions/         # Mutation directory tracking the live evolution of the chassis
+__init__.py         # Certification of package initialization and unity
+main_server.py      # FastAPI Application and Decentralized Router Node
+requirements.txt    # Invariant Dependency Version Registry
+test_suite.py       # Adversarial Security Audit Strike Suite
 ```
 
 
